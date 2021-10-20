@@ -1,3 +1,61 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "commonjs": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react", "jest", "prettier", "react-hooks", "no-loops"],
+  "rules": {
+    "jsx-a11y/click-events-have-key-events": 0,
+    "no-unneeded-ternary": ["error", { "defaultAssignment": false }],
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-uses-react": "off",
+    // "react/prop-types": "warn", // disabled temporarily see -> https://jiraent.staples.com/browse/SCE-5398 remove comment once fixed.
+    "react/no-unused-prop-types": "warn",
+    "react/jsx-uses-vars": [2],
+    "no-console": 2,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-var": "error",
+    "prefer-const": "warn",
+    "no-useless-constructor": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "eqeqeq": "error",
+    "curly": "warn",
+    "no-loops/no-loops": 2
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
 }
